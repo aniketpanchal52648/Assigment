@@ -1,0 +1,19 @@
+<% layout('layouts/boilerplate') %> 
+<div class="container">
+
+    <% for(post of Posts){ %> 
+
+        <div class="card w-75">
+            <div class="card-body">
+              <h5 class="card-title"><%= post.title %> </h5>
+              <p class="card-text"><%= post.post %> </p>
+              <%   if(post.author && post.author.username){%>
+              Post By:- <span>
+                <a href="/users/<%=post.author.username  %> ">
+                <%= post.author.username %> 
+            </a></span>
+                <% } %> 
+            </div>
+          </div>
+        <% } %> 
+</div>

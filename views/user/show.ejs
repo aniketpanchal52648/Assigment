@@ -1,0 +1,27 @@
+<% layout('layouts/boilerplate') %> 
+<div class="container">
+  <% if(currentUser){ %> 
+    <% for(user of users){ %> 
+        <% if(currentUser && user.username!==currentUser.username){ %> 
+        <div class="card w-75">
+            <div class="card-body">
+              <h5 class="card-title"><%= user.username %> </h5>
+              <a href="/users/<%= user.username %> " class="btn btn-primary">View</a>
+             
+            </div>
+          </div>
+          <% }%>
+        <% } %> 
+        <% }else{ %> 
+          <% for(user of users){ %> 
+           
+                <div class="card-body">
+                  <h5 class="card-title"><%= user.username %> </h5>
+                  <a href="/users/<%= user.username %> " class="btn btn-primary">View</a>
+                 
+                </div>
+              </div>
+           
+            <% } %> 
+          <% } %> 
+</div>

@@ -1,0 +1,15 @@
+<% layout('layouts/boilerplate') %> 
+<div class="container">
+
+
+
+        <div class="card w-75">
+            <div class="card-body">
+              <h5 class="card-title"><%= user.username %> </h5>
+              <% if(currentUser){ %> 
+              <a href="/users/<%= user.username %>/follow " class="btn btn-primary">Follow</a>
+             <% } %> 
+            </div>
+          </div>
+        
+</div>
